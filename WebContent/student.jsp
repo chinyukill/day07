@@ -1,4 +1,4 @@
-<%@page import="com.sun.org.apache.bcel.internal.generic.NEW"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="com.chenxue.bean.Student"%>
 <%
 String path = request.getContextPath();String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,10 +17,18 @@ String path = request.getContextPath();String basePath = request.getScheme()+":/
 <%
 	Student stu = new Student(22,"chenxue");
 	request.setAttribute("stuKey", stu);
+	pageContext.setAttribute("num1",100);
+	pageContext.setAttribute("num2",200);
+	session.setAttribute("age", 16);
 	%>
 <body>
 	
-	${requsetScope.stuKey.sid}<br/>
-	${requsetScope.stuKey.sname}
+	${requestScope.stuKey.sid}<br/>
+	${requestScope.stuKey.snameString}<br/>
+	${stuKey.sid}<br/>
+	${stuKey.snameString}<br/>
+	${num1+num2}<br/>
+	${sessionScope.age >= 18? "成年人":"未成年人" }<br/>
+	${sessionScope.age ge 18? "成年人":"未成年人" }
 </body>
 </html>

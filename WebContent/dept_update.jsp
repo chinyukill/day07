@@ -36,6 +36,30 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 			</td>
 		</tr>
 	</table>
+	<br>
+	<br>
+	<table border="2">
+		<tr>
+			<td>部门编号</td>
+			<td><input type="text" name="deptNo" value="${deptItem.deptNo}" readOnly></td>
+		</tr>
+		<tr>
+			<td>部门名称</td>
+			<td><input type="text" name="dName" value="${deptItem.dName}"></td>
+		</tr>
+		<tr>
+			<td>部门位置</td>
+			<td><input type="text" name="loc" value="${deptItem.loc}"></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="更新" >
+			</td>
+			<td>
+				<input type="reset">
+			</td>
+		</tr>
+	</table>
 </form>
 </body>
 </html>
